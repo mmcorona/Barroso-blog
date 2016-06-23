@@ -1,21 +1,53 @@
 {{!< default}}
 
-<header id="homepage-hero" 
+<!-- top-header-->
+<!-- <head>
+	<!-- <title>Fixed Header & Nav</tittle> -->
+<body>
+		<div class="header">
+			<div class="container">
+
+					<!-- <div class="logo">
+						<h1><a href="#">Andres Barroso</h1>
+					</div> -->
+
+					<div class="nav">
+							<ul>
+									<li><a href="#">Home</a></li>
+									<li><a href="#">Biografia</a></li>
+									<li><a href="#">Post</a></li>
+									<li><a href="#">Tienda</a></li>
+
+							</ul>
+					</div>
+				</div>
+			</div>
+</body>
+
+
+<header id="homepage-hero"
 	{{#if @blog.cover}}
 	style="background-image: url({{@blog.cover}});"
 	{{else}}
 	style="background-image: url('{{asset "images/cover.jpg"}}');"
 	{{/if}}
 >
+<!-- {{> nav-container}} -->
 
 	<div class="title-container">
+		{{#if @blog.logo}}
+		<a id="avatar-link" title="link to homepage for {{@blog.title}}" href="{{@blog.url}}/#open">
+			<img src="{{@blog.logo}}" alt="{{@blog.title}} avatar" id="home-page-logo-img"	/>
+			<h3 id="profile-resume"></h3>
+		</a>
+		{{/if}}
 		<h1 class="blog-title">{{@blog.title}}</h1>
 		<p class="blog-description">{{@blog.description}}</p>
-		
-		<ul class="homepage-links">
+
+		<!-- <ul class="homepage-links">
 			<li><a href="#home-latest-post" id="blog">Blog</a></li>
 			{{navigation}}
-		</ul>
+		</ul> -->
 	</div>
 
 </header>
@@ -26,4 +58,22 @@
 	{{/foreach}}
 
 	{{pagination}}
+	{{!< Space used for Facebook API}}
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+	<div class="fb-page" data-href="https://www.facebook.com/poetadeDi0s/?pnref=story" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"></div>
+{{!Space used for Twitter API}}
+	<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+	<a class="twitter-timeline"
+  href="https://twitter.com/AndresBarros0"
+  width="340"
+  height="492">
+Tweets by @AndresBarros0
+</a>
 </main>
