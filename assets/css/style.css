@@ -661,5 +661,12 @@ li{
     margin-left: 15px;
 }
 #homepage-hero{
-width: 100
+width: 100%;
+}
+.timeline-Widget{
+  display: none!important;
+}
+#div-twitter{
+    display: inline-block;
+    margin-left: 50px;
 }
